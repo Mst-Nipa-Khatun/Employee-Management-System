@@ -47,7 +47,7 @@ public class EmpController {
     }
 
     @GetMapping("/delete/{id}")//delete url
-    public String deleteEmp(@PathVariable int id, HttpSession session) {
+    public String deleteEmp(@PathVariable("id") int id, HttpSession session) {
         empService.deleteEmpById(id); // deleted by id from empservice
         session.setAttribute("Message", "emp deleted successfully"); // same as previous
         return "redirect:/";
